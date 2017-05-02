@@ -253,6 +253,33 @@ standard
 
 \end{frame}
 
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Deployment with Nginx}
+
+
+% -----------------------------------------------
+\begin{frame}
+\frametitle<presentation>{PyWPS 4.0 is a Flask application}
+
+\begin{itemize}
+  \item PyWPS 4.0 developed with WSGI in mind
+  \item Distributed by default as a Flask application
+  \item It can be run directly on Flash - not advisable
+  \begin{itemize}
+    \item no request concurrency
+    \item no request queueing
+    \item Flask is primarily meant for development
+  \end{itemize}
+  \item PyWPS 4.0 can be run on Nginx - not advisable
+  \begin{itemize}
+    \item 
+  \end{itemize} 
+\end{itemize}
+
+\huge{Confused ?}
+
+\end{frame}
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Summary}
 
