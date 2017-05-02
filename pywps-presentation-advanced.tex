@@ -286,7 +286,7 @@ standard
 
 % -----------------------------------------------
 \begin{frame}
-\frametitle<presentation>{The Onion}
+\frametitle<presentation>{The WSGI Onion}
 
 \begin{tikzpicture}[remember picture,overlay]
     \node[xshift=-9.2cm,yshift=-5cm] at (current page.north east)
@@ -300,6 +300,27 @@ Nginx - HTTP server / reverse proxy \\
 \vspace{0.4cm}
 \huge{Why ?}
 \end{textblock*}
+\end{frame}
+
+% -----------------------------------------------
+\begin{frame}
+\frametitle<presentation>{The role of a WSGI server}
+
+\begin{itemize}
+  \item WSGI - Common interface to multiple web applications framework
+  \item WSGI Server - basic functions:
+  \begin{itemize}
+    \item accepts HTTP requests
+    \item replies to HTTP requests
+  \end{itemize}
+  \item WSGI provides \textit{concurrency}, allowing multiple: 
+  \begin{itemize}
+    \item threads
+    \item workers
+    \item processes
+  \end{itemize} 
+\end{itemize}
+
 \end{frame}
 
 
