@@ -25,6 +25,9 @@
 
 \usepackage[T1]{fontenc}
 
+% User packages
+\usepackage[absolute,overlay]{textpos}
+\usepackage{tikz}
 
 \title{PyWPS 4.0 - Advanced Features}
 
@@ -280,6 +283,31 @@ standard
 \huge{Confused ?}
 
 \end{frame}
+
+% -----------------------------------------------
+\begin{frame}
+\frametitle<presentation>{The Onion}
+
+\begin{tikzpicture}[remember picture,overlay]
+    \node[xshift=-9.2cm,yshift=-5cm] at (current page.north east)
+    {\includegraphics[height=6cm]{figures/OnionWSGI}};
+\end{tikzpicture}
+
+\begin{textblock*}{5cm}(7cm,3cm)
+WSGI - Web Server Gateway \\
+\vspace{0.4cm}
+Nginx - HTTP server / reverse proxy \\
+\vspace{0.4cm}
+\huge{Why ?}
+\end{textblock*}
+\end{frame}
+
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Docker Containers}
+
+
+
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Summary}
 
