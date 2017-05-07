@@ -445,6 +445,11 @@ Nginx - HTTP server / reverse proxy \\
 \begin{frame}
 \frametitle<presentation>{Docker}
 
+\begin{tikzpicture}[remember picture,overlay]
+    \node[xshift=-3cm,yshift=-5cm] at (current page.north east)
+    {\includegraphics[height=4cm]{figures/docker}};
+\end{tikzpicture}
+
 \begin{itemize}
   \item An OS level virtualisation engine
   \item Docker runs \textit{containers}
@@ -464,10 +469,10 @@ Nginx - HTTP server / reverse proxy \\
 \begin{itemize}
   \item A Docker image can be created automatically from a script
    \begin{itemize} \item called \textit{dockerfile} \end{itemize}
-  \item An image created by a dockerfile for PyWPS: 
+  \item An image created by a PyWPS dockerfile: 
   \begin{itemize} 
     \item sets up the OS 
-    \item all necessary software (Nginx, Green Unicorn,\ldots)
+    \item wires up all necessary software (Nginx, Green Unicorn,\ldots)
     \item is run by Docker as a container   
   \end{itemize}
 \end{itemize}
@@ -484,14 +489,20 @@ Nginx - HTTP server / reverse proxy \\
   \item There a few already for PyWPS:   
 \end{itemize}
 
+  \begin{figure}[ht]
+   \centering
+   \includegraphics[height=3.6cm]{figures/DockerfilesPyWPS}
+  \end{figure}
+
 \end{frame}
 
 % -----------------------------------------------
 \begin{frame}
 \frametitle<presentation>{Running PyWPS with GUnicorn and Nginx}
 
-\texttt{# docker pull jorgedejesus/pywps4-demo:nginx}
-\texttt{# docker run -it -p 80:80 pywps4-demo:ningx}
+\texttt{\# docker pull jorgedejesus/pywps4-demo:nginx}
+
+\texttt{\# docker run -it -p 80:80 pywps4-demo:ningx}
 
 \end{frame}
 
