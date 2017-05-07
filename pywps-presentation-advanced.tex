@@ -78,6 +78,19 @@ GeoCAT}
 \end{frame}
 }
 
+% Section title slides
+\AtBeginSection[]{
+  \begin{frame}
+  \vfill
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+    \usebeamerfont{title}\insertsectionhead\par%
+  \end{beamercolorbox}
+  \vfill
+  \end{frame}
+}
+
+
 % If you wish to uncover everything in a step-wise fashion, uncomment
 % the following command:
 
@@ -144,10 +157,9 @@ standard
   \item Complicated
   \item A client
   \item A GUI or any other user interface
-  \item a server with pre-installed processes
-  \item 
-  
+  \item a server with pre-installed processes 
 \end{itemize}
+
 \end{frame}
 
 
@@ -163,7 +175,7 @@ standard
   \item Guarantee interoperability of model inputs and outputs
   \begin{itemize}
     \item using the OGC data standards
-	\item 
+	\item formalizing input/output data types
   \end{itemize}
 \end{itemize}
 \end{frame}
@@ -272,7 +284,7 @@ standard
   \item Fully transparent paradigm:
   \begin{itemize} 
     \item full control of database architecture 
-    \item full control, over SQL construction
+    \item full control over SQL construction
   \end{itemize}
   \item Supportes a myriad of DBAPI dialects:
   \begin{itemize}
@@ -338,6 +350,7 @@ standard
   \end{itemize} 
 \end{itemize}
 
+\centering
 \huge{Confusing ?}
 
 \end{frame}
@@ -347,11 +360,11 @@ standard
 \frametitle<presentation>{The WSGI Onion}
 
 \begin{tikzpicture}[remember picture,overlay]
-    \node[xshift=-9.2cm,yshift=-5cm] at (current page.north east)
+    \node[xshift=-9.2cm,yshift=-5.8cm] at (current page.north east)
     {\includegraphics[height=6cm]{figures/OnionWSGI}};
 \end{tikzpicture}
 
-\begin{textblock*}{5cm}(7cm,3cm)
+\begin{textblock*}{5cm}(7cm,4cm)
 WSGI - Web Server Gateway \\
 \vspace{0.4cm}
 Nginx - HTTP server / reverse proxy \\
@@ -414,7 +427,7 @@ Nginx - HTTP server / reverse proxy \\
 \begin{itemize}
   \item Essentially a web server
   \item But more used for reverse-proxy
-  \item Acts as a single entrance points to all requests
+  \item Acts as a single entrance point to all requests
   \item Redirects requests to Green Unicorn
   \item Can redirect to multiple Green Unicorns
   \item Gateway to multiple servers and applications from a single URL 
