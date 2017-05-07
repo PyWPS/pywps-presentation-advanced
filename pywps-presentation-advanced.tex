@@ -276,7 +276,8 @@ standard
   \end{itemize}
   \item PyWPS 4.0 can be run on Nginx - not advisable
   \begin{itemize}
-    \item 
+    \item less flexible with multiple applications
+    \item parallel processing is not optimised
   \end{itemize} 
 \end{itemize}
 
@@ -307,7 +308,7 @@ Nginx - HTTP server / reverse proxy \\
 \frametitle<presentation>{The role of a WSGI server}
 
 \begin{itemize}
-  \item WSGI - Common interface to multiple web applications framework
+  \item WSGI - Common interface to multiple web applications frameworks
   \item WSGI Server - basic functions:
   \begin{itemize}
     \item accepts HTTP requests
@@ -320,9 +321,60 @@ Nginx - HTTP server / reverse proxy \\
     \item processes
   \end{itemize} 
 \end{itemize}
+\end{frame}
+
+
+% -----------------------------------------------
+\begin{frame}
+\frametitle<presentation>{Green Unicorn}
+
+\begin{itemize}
+  \item It is one of many WSGI servers out there
+  \item Easy to configure and use with Python
+  \item Promotes the concpets of ``workers''
+  \begin{itemize} \item essentially OS processes \end{itemize}
+  \item Each worker can run on a different CPU core
+  \begin{itemize} \item a worker can be a Flask application instance
+  \end{itemize}
+\end{itemize}
 
 \end{frame}
 
+% -----------------------------------------------
+\begin{frame}
+\frametitle<presentation>{Nginx}
+
+\begin{itemize}
+  \item Essentially a web server
+  \item But more used for reverse-proxy
+  \item Acts as a single entrance points to all requests
+  \item Redirects requests to Green Unicorn
+  \item Can redirect to multiple Green Unicorns
+  \item Gateway to multiple servers and applications from a single URL 
+\end{itemize}
+
+\end{frame}
+
+
+% -----------------------------------------------
+\begin{frame}
+\frametitle<presentation>{It's complicated!}
+
+\begin{itemize}
+  \item Scalability requires the orchestration of various software layers:
+   \begin{itemize}
+	  \item Nginx
+	  \item Green Unicorn
+	  \item Flask
+	  \item PyWPS 
+	\end{itemize}
+  \item Many packages to install
+  \item Many configurations to set-up
+\end{itemize}
+
+\Large{Too much work?}
+
+\end{frame}
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Docker Containers}
