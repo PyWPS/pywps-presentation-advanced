@@ -22,12 +22,12 @@
 \usepackage[scaled=.90]{helvet}
 \usepackage{courier}
 
-
 \usepackage[T1]{fontenc}
 
 % User packages
 \usepackage[absolute,overlay]{textpos}
 \usepackage{tikz}
+\usepackage{listings}
 
 \title{PyWPS 4.0 - Advanced Features}
 
@@ -107,33 +107,9 @@ GeoCAT}
   \item Over three years in development \pause
   \item Relevant contributions by over a dozen individuals \pause
   \item New licence: MIT \pause
-  \item OSGeo acreditation around the corner \ldots \pause
+  \item OSGeo acreditation around the corner \ldots
 \end{itemize}
 \end{frame}
-
-% \begin{frame}
-% \frametitle{}
-% 
-% % You can create overlays
-% \begin{itemize}
-%   \item using the \texttt{pause} command:
-%   \begin{itemize}
-%     \item First item.
-%     \pause
-%     \item Second item.
-%   \end{itemize}
-%   \item using overlay specifications:
-%   \begin{itemize}
-%     \item<3-> First item.
-%     \item<4-> Second item.
-%   \end{itemize}
-%   \item using the general \texttt{uncover} command:
-%   \begin{itemize}
-%     \uncover<5->{\item First item.}
-%     \uncover<6->{\item Second item.}
-%   \end{itemize}
-% \end{itemize}
-% \end{frame}
 
 
 
@@ -229,23 +205,48 @@ standard
 
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section*{Logging and SQLAlchemy}
+\section{Logging and SQLAlchemy}
 
 % -----------------------------------------------
-\begin{frame}
+\begin{frame}[fragile]
 \frametitle<presentation>{Accessing logs in previous versions}
 
+\begin{textblock*}{6cm}(0.6cm,3cm)
+\tiny{
+\textbf{\texttt{\$~tail~/users/rsg/jmdj/workspace/pywps-3.2-soap/pywps/pywps.log}}
+\begin{lstlisting}
+ INFO: Status [processaccepted]: Process ultimatequestionprocess accepted
+ PyWPS [2010-08-25 10:25:57,057] INFO: Status [processstarted][0.0]: Process ultimatequestionprocess
+ PyWPS [2010-08-25 10:25:57,068] INFO: Status [processstarted][0.0]: processstarted Preparing....
+ PyWPS [2010-08-25 10:26:07,085] INFO: Status [processstarted][10.0]: processstarted Thinking.....
+ PyWPS [2010-08-25 10:26:17,114] INFO: Status [processstarted][20.0]: processstarted Thinking.....
+ PyWPS [2010-08-25 10:26:27,144] INFO: Status [processstarted][30.0]: processstarted Thinking.....
+ PyWPS [2010-08-25 10:26:37,174] INFO: Status [processstarted][40.0]: processstarted Thinking.....
+ PyWPS [2010-08-25 10:26:47,197] INFO: Status [processstarted][50.0]: processstarted Thinking.....
+ PyWPS [2010-08-25 10:26:57,225] INFO: Status [processstarted][60.0]: processstarted Thinking.....
+ PyWPS [2010-08-25 10:27:07,246] INFO: Status [processstarted][70.0]: processstarted Thinking.....
+ PyWPS [2010-08-25 10:27:17,275] INFO: Status [processstarted][80.0]: processstarted Thinking.....
+ PyWPS [2010-08-25 10:27:27,304] INFO: Status [processstarted][90.0]: processstarted Thinking.....
+ PyWPS [2010-08-25 10:27:37,334] INFO: Status [processstarted][100.0]: processstarted Thinking.....
+ PyWPS [2010-08-25 12:29:09,619] INFO: Setting PYWPS_PROCESSES from configuration file to 
+ /users/rsg/jmdj/workspace/pywps-3.2-soap/pywps/processes/
+ PyWPS [2010-08-25 12:29:11,112] INFO: Following processes are imported: ['returner', 'dummyprocess', 
+ 'ultimatequestionprocess', 'complexVector', 'complexRaster', 'firstInstance', 'secondInstance', 
+ 'assyncprocess', 'bboxprocess', 'complexprocess', 'literalprocess', 'noinputsprocess', 'GMLBuffer', 
+ 'reducer', 'histogramprocess']
+\end{lstlisting}
+}
+\end{textblock*}
 \end{frame}
 
 % -----------------------------------------------
 \begin{frame}
 \frametitle<presentation>{Logs in PyWPS 4.0}
 
-\end{frame}
-
-% -----------------------------------------------
-\begin{frame}
-\frametitle<presentation>{Easy to configure}
+  \begin{figure}[ht]
+   \centering
+   \includegraphics[height=6cm]{figures/SQLiteBrowser}
+  \end{figure}
 
 \end{frame}
 
@@ -254,11 +255,60 @@ standard
 \begin{frame}
 \frametitle<presentation>{SQLAlchemy}
 
+\begin{tikzpicture}[remember picture,overlay]
+    \node[xshift=-2.5cm,yshift=-3.2cm] at (current page.north east)
+    {\includegraphics[height=0.7cm]{figures/sqlalchemy}};
+\end{tikzpicture}
+
+\begin{itemize}
+  \item Object-Relation Mapping for Python
+  \item Fully transparent paradigm:
+  \begin{itemize} 
+    \item full control of database architecture 
+    \item full control, over SQL construction
+  \end{itemize}
+  \item Supportes a myriad of DBAPI dialects:
+  \begin{itemize}
+    \item Firebird
+    \item Microsoft SQL Server
+    \item MySQL
+    \item Oracle
+    \item PostgreSQL
+    \item SQLite
+    \item Sybase
+    \item more to come \ldots
+  \end{itemize}
+  \item A single gateway for multiple database management systems
+\end{itemize}
+
 \end{frame}
 
 
+% -----------------------------------------------
+\begin{frame}
+\frametitle<presentation>{Easy to configure}
+
+\begin{itemize}
+  \item PyWPS 4.0 takes care of the complete ORM set up
+  \item It only requires a connection string to a database
+  \item Example with SQLite: \\
+  \footnotesize{\texttt{sqlite:///logs/pywps-logs.sqlite3}}
+  \item \normalsize{Example with Postgres:}
+  \footnotesize{\texttt{postgresql://pywps:toto123@localhost:5432/pywps-demo}}
+\end{itemize}
+
+\vspace{0.5cm}
+
+\centering
+\footnotesize{http://pywps.readthedocs.io/en/latest/configuration.html\#logging}
+
+\end{frame}
+
+
+
+
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section*{Deployment with Nginx}
+\section{Deployment and Scalability}
 
 
 % -----------------------------------------------
@@ -377,7 +427,7 @@ Nginx - HTTP server / reverse proxy \\
 \end{frame}
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section*{Docker Containers}
+\section{Docker Containers}
 
 % -----------------------------------------------
 \begin{frame}
@@ -435,7 +485,7 @@ Nginx - HTTP server / reverse proxy \\
 
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section*{Summary}
+\section{Summary and Future Work}
 
 \begin{frame}
 \frametitle<presentation>{Summary}
