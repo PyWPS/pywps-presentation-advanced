@@ -379,6 +379,59 @@ Nginx - HTTP server / reverse proxy \\
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Docker Containers}
 
+% -----------------------------------------------
+\begin{frame}
+\frametitle<presentation>{Docker}
+
+\begin{itemize}
+  \item An OS level virtualisation engine
+  \item Docker runs \textit{containers}
+  \begin{itemize} \item a very light weight virtual machine \end{itemize}
+  \item Major running process has PID=1
+   \begin{itemize}
+	  \item no more trash\ldots
+	\end{itemize}
+\end{itemize}
+
+\end{frame}
+
+% -----------------------------------------------
+\begin{frame}
+\frametitle<presentation>{Dockerfiles for PyWPS}
+
+\begin{itemize}
+  \item A Docker image can be created automatically from a script
+   \begin{itemize} \item called \textit{dockerfile} \end{itemize}
+  \item An image created by a dockerfile for PyWPS: 
+  \begin{itemize} 
+    \item sets up the OS 
+    \item all necessary software (Nginx, Green Unicorn,\ldots)
+    \item is run by Docker as a container   
+  \end{itemize}
+\end{itemize}
+
+\end{frame}
+
+
+% -----------------------------------------------
+\begin{frame}
+\frametitle<presentation>{Dockerfiles for PyWPS}
+
+\begin{itemize}
+  \item Dockerhub is a public repository for dockerfiles
+  \item There a few already for PyWPS:   
+\end{itemize}
+
+\end{frame}
+
+% -----------------------------------------------
+\begin{frame}
+\frametitle<presentation>{Running PyWPS with GUnicorn and Nginx}
+
+\texttt{# docker pull jorgedejesus/pywps4-demo:nginx}
+\texttt{# docker run -it -p 80:80 pywps4-demo:ningx}
+
+\end{frame}
 
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
