@@ -35,7 +35,9 @@
 
 % - Use the \inst{?} command only if the authors have different
 %   affiliation.
-\author{L.~M.~de~Sousa\inst{1} \and J.~M.~de~Jesus\inst{2}}
+\author{\vspace{2.3cm}\\ 
+L.~M.~de~Sousa\inst{1}
+\and J.~M.~de~Jesus\inst{2}}
 %\author{\inst{1}}
 
 % - Use the \inst command only if there are several affiliations.
@@ -48,7 +50,7 @@ Eawag - Swiss Federal Institute of Aquatic Science and Technology
 \inst{2}%
 GeoCAT}
 
-\date{$10^{th}$ of May / GeoPython Conference 2017}
+\date{\footnotesize{$10^{th}$ of May / GeoPython Conference 2017}}
 
 
 % This is only inserted into the PDF information catalog. Can be left
@@ -84,7 +86,12 @@ GeoCAT}
 \begin{document}
 
 \begin{frame}
-\titlepage
+   \tikz [remember picture,overlay]
+    \node at
+        ([yshift=4.8cm]current page.south) 
+        %or: (current page.center)
+        {\includegraphics[height=2.8cm]{figures/pywps}};
+   \titlepage
 \end{frame}
 
 \begin{frame}
