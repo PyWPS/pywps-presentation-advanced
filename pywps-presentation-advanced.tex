@@ -435,6 +435,24 @@ Nginx - HTTP server / reverse proxy \\
 
 \end{frame}
 
+% -----------------------------------------------
+\begin{frame}
+\frametitle<presentation>{The WSGI Onion}
+
+\begin{tikzpicture}[remember picture,overlay]
+    \node[xshift=-9.2cm,yshift=-5.8cm] at (current page.north east)
+    {\includegraphics[height=6cm]{figures/OnionWSGI_all}};
+\end{tikzpicture}
+
+\begin{textblock*}{5cm}(7cm,4cm)
+\begin{itemize}
+  \item NGinx - security, reverse proxy, load balancing
+  \item GUnicorn - concurrency, WSGI 
+  \item Flask - web application framework
+\end{itemize}
+\end{textblock*}
+\end{frame}
+
 
 % -----------------------------------------------
 \begin{frame}
