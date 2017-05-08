@@ -520,6 +520,40 @@ WSGI - Web Server Gateway \\
   \end{itemize}
 \end{itemize}
 
+\tiny{
+\begin{verbatim}
+
+FROM jorgedejesus/pywps4-demo
+
+MAINTAINER Jorge Samuel Mendes de Jesus <jorge.dejesus@geocat.net>
+
+\#For Gunicorn
+
+ARG GU\_WORKERS=5
+
+ENV GU\_WORKERS=\$\{GU\_WORKERS\}
+
+RUN apk add --update --no-cache nginx
+
+RUN rm /etc/nginx/conf.d/default.conf
+
+COPY pywps.conf /etc/nginx/conf.d/
+
+COPY run\_all.sh /run\_all.sh
+
+\#For nginx.pid    
+
+RUN mkdir -p /run/nginx
+
+\#For pywps
+
+RUN pip3 install gunicorn
+
+RUN ln -s /pywps-demo/wsgi/pywps.wsgi /pywps-demo/wsgi/pywps\_app.py
+\end{verbatim}
+}
+
+
 \end{frame}
 
 
