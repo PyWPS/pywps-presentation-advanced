@@ -490,12 +490,17 @@ WSGI - Web Server Gateway \\
 
 \begin{itemize}
   \item An OS level virtualisation engine
-  \item Docker runs \textit{containers}
+  \item Docker runs software \textit{containers}
   \begin{itemize} \item a very light weight virtual machine \end{itemize}
-  \item Major running process has PID=1
-   \begin{itemize}
-	  \item no more trash\ldots
-	\end{itemize}
+  \item Uses Linux kernel namespaces to isolate\\ available resources:
+  \begin{itemize}
+    \item operating environment
+    \item process and user IDs 
+    \item process trees 
+    \item network
+	\item mounted file systems
+  \end{itemize}
+  \item Virtualisation provided by the OS itself
 \end{itemize}
 
 \end{frame}
