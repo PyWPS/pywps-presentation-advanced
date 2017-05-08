@@ -50,7 +50,7 @@ Eawag - Swiss Federal Institute of Aquatic Science and Technology
 \inst{2}%
 GeoCAT}
 
-\date{\footnotesize{$10^{th}$ of May / GeoPython Conference 2017}}
+\date{\footnotesize{$9^{th}$ of May / GeoPython Conference 2017}}
 
 
 % This is only inserted into the PDF information catalog. Can be left
@@ -127,7 +127,7 @@ GeoCAT}
   \item Over three years in development \pause
   \item Relevant contributions by over a dozen individuals \pause
   \item New licence: MIT \pause
-  \item OSGeo acreditation around the corner \ldots
+  \item OSGeo accreditation around the corner \ldots
 \end{itemize}
 \end{frame}
 
@@ -138,11 +138,10 @@ GeoCAT}
 \frametitle{What is PyWPS?}
 
 \begin{itemize}
-  \item An implementation of the OGC Web Processing Service
-standard
-\item Coded on the Python language (researcher friendly)
-\item Started in the Spring of 2006
-\item Supports all available tools in Python for geospatial operations
+  \item An implementation of the OGC Web Processing Service standard \pause
+\item Coded on the Python language (researcher friendly)  \pause
+\item Started in the Spring of 2006  \pause
+\item Supports all available tools in Python for geo-spatial operations  \pause
 \item http://pywps.org
   
 \end{itemize}
@@ -154,10 +153,10 @@ standard
 \frametitle{What PyWPS is not}
 
 \begin{itemize}
-  \item Complicated
-  \item A client
-  \item A GUI or any other user interface
-  \item a server with pre-installed processes 
+  \item Complicated  \pause
+  \item A client  \pause
+  \item A GUI or any other user interface  \pause
+  \item a server with pre-installed processes \pause
 \end{itemize}
 
 \end{frame}
@@ -169,10 +168,11 @@ standard
 \frametitle{What is PyWPS good for?}
 
 \begin{itemize}
-  \item Make your models available to the world
-  \item Enables remote processing of complex and/or length models 
-  \item Guarantee model inputs fit basic requirements (e.g. type, quantity)
-  \item Guarantee interoperability of model inputs and outputs
+  \item Make your models available to the world  \pause
+  \item Enables remote processing of complex and/or lengthy models  \pause
+  \item Guarantees model inputs fit basic requirements 
+        (e.g. type, number)  \pause
+  \item Guarantees interoperability of model inputs and outputs
   \begin{itemize}
     \item using the OGC data standards
 	\item formalizing input/output data types
@@ -189,13 +189,13 @@ standard
 \frametitle<presentation>{The OGC Web Processing Service}
 
 \begin{itemize}
-\item OGC open web standard for remote geo-spatial processing.
-\item Integrated with web data services: \textbf{WFS}, \textbf{WCS}.
+\item OGC open web standard for remote geo-spatial processing.  \pause
+\item Integrated with web data services: \textbf{WFS}, \textbf{WCS}.  \pause
 \item Three basic requests:
 \begin{itemize}   
       \item  \textit{GetCapabilities}
       \item  \textit{DescribeProcess}
-      \item  \textit{Execute}
+      \item  \textit{Execute}   \pause
 \end{itemize}
 \item Three basic input/output classes:
 \begin{itemize}   
@@ -280,13 +280,13 @@ standard
 \end{tikzpicture}
 
 \begin{itemize}
-  \item Object-Relation Mapping for Python
+  \item Object-Relation Mapping for Python  \pause
   \item Fully transparent paradigm:
   \begin{itemize} 
     \item full control of database architecture 
-    \item full control over SQL construction
+    \item full control over SQL construction  \pause
   \end{itemize}
-  \item Supportes a myriad of DBAPI dialects:
+  \item Supports a myriad of DBAPI dialects:
   \begin{itemize}
     \item Firebird
     \item Microsoft SQL Server
@@ -295,10 +295,14 @@ standard
     \item PostgreSQL
     \item SQLite
     \item Sybase
-    \item more to come \ldots
+    \item more to come \ldots  \pause
   \end{itemize}
-  \item A single gateway for multiple database management systems
+  \item A single gateway for multiple database management systems  \pause
 \end{itemize}
+
+
+\centering
+\footnotesize{http://www.sqlalchemy.org}
 
 \end{frame}
 
@@ -308,10 +312,10 @@ standard
 \frametitle<presentation>{Easy to configure}
 
 \begin{itemize}
-  \item PyWPS 4.0 takes care of the complete ORM set up
-  \item It only requires a connection string to a database
+  \item PyWPS 4.0 takes care of the complete ORM set up  \pause
+  \item It only requires a connection string to a database  \pause
   \item Example with SQLite: \\
-  \footnotesize{\texttt{sqlite:///logs/pywps-logs.sqlite3}}
+  \footnotesize{\texttt{sqlite:///logs/pywps-logs.sqlite3}}  \pause
   \item \normalsize{Example with Postgres:}
   \footnotesize{\texttt{postgresql://pywps:toto123@localhost:5432/pywps-demo}}
 \end{itemize}
@@ -335,18 +339,18 @@ standard
 \frametitle<presentation>{PyWPS 4.0 is a Flask application}
 
 \begin{itemize}
-  \item PyWPS 4.0 developed with WSGI in mind
-  \item Distributed by default as a Flask application
-  \item It can be run directly on Flash - not advisable
+  \item PyWPS 4.0 developed with WSGI in mind  \pause
+  \item Distributed by default as a Flask application  \pause
+  \item It can be run directly on Flask - not advisable
   \begin{itemize}
     \item no request concurrency
     \item no request queueing
-    \item Flask is primarily meant for development
+    \item Flask is primarily meant for development  \pause
   \end{itemize}
   \item PyWPS 4.0 can be run on Nginx - not advisable
   \begin{itemize}
     \item less flexible with multiple applications
-    \item parallel processing is not optimised
+    \item parallel processing is not optimised  \pause
   \end{itemize} 
 \end{itemize}
 
@@ -378,11 +382,11 @@ WSGI - Web Server Gateway \\
 \frametitle<presentation>{The role of a WSGI server}
 
 \begin{itemize}
-  \item WSGI - Common interface to multiple web applications frameworks
+  \item WSGI - Common interface to multiple web applications frameworks  \pause
   \item WSGI Server - basic functions:
   \begin{itemize}
     \item accepts HTTP requests
-    \item replies to HTTP requests
+    \item replies to HTTP requests  \pause
   \end{itemize}
   \item WSGI provides \textit{concurrency}, allowing multiple: 
   \begin{itemize}
@@ -396,7 +400,7 @@ WSGI - Web Server Gateway \\
 
 % -----------------------------------------------
 \begin{frame}
-\frametitle<presentation>{Green Unicorn}
+\frametitle<presentation>{Gunicorn (Green Unicorn)}
 
 \begin{tikzpicture}[remember picture,overlay]
     \node[xshift=-2.5cm,yshift=-4cm] at (current page.north east)
@@ -404,14 +408,17 @@ WSGI - Web Server Gateway \\
 \end{tikzpicture}
 
 \begin{itemize}
-  \item It is one of many WSGI servers out there
-  \item Easy to configure and use with Python
-  \item Promotes the concpets of ``workers''
-  \begin{itemize} \item essentially OS processes \end{itemize}
+  \item It is one of many WSGI servers out there  \pause
+  \item Easy to configure and use with Python  \pause
+  \item Promotes the concepts of ``workers'' 
+  \begin{itemize} \item essentially OS processes \end{itemize}  \pause
   \item Each worker can run on a different CPU core
   \begin{itemize} \item a worker can be a Flask application instance
   \end{itemize}
 \end{itemize}
+
+\centering
+\footnotesize{http://gunicorn.org}
 
 \end{frame}
 
@@ -425,13 +432,16 @@ WSGI - Web Server Gateway \\
 \end{tikzpicture}
 
 \begin{itemize}
-  \item Essentially a web server
-  \item But more used for reverse-proxy
-  \item Acts as a single entrance point to all requests
-  \item Redirects requests to Green Unicorn
-  \item Can redirect to multiple Green Unicorns
+  \item Essentially a web (HTTP) server  \pause
+  \item But more used for reverse-proxy  \pause
+  \item Acts as a single entrance point to all requests  \pause
+  \item Redirects requests to Gunicorn  \pause
+  \item Can redirect to multiple Gunicorns  \pause
   \item Gateway to multiple servers and applications from a single URL 
 \end{itemize}
+
+\centering
+\footnotesize{http://nginx.org/}
 
 \end{frame}
 
@@ -446,8 +456,8 @@ WSGI - Web Server Gateway \\
 
 \begin{textblock*}{5cm}(7cm,4cm)
 \begin{itemize}
-  \item NGinx - security, reverse proxy, load balancing
-  \item GUnicorn - concurrency, WSGI 
+  \item Nginx - security, reverse proxy, load balancing
+  \item Gunicorn - concurrency, WSGI 
   \item Flask - web application framework
 \end{itemize}
 \end{textblock*}
@@ -459,15 +469,16 @@ WSGI - Web Server Gateway \\
 \frametitle<presentation>{It's complicated!}
 
 \begin{itemize}
+ \pause
   \item Scalability requires the orchestration of various software layers:
    \begin{itemize}
 	  \item Nginx
-	  \item Green Unicorn
+	  \item Gunicorn
 	  \item Flask
 	  \item PyWPS 
-	\end{itemize}
-  \item Many packages to install
-  \item Many configurations to set-up
+	\end{itemize} \pause
+  \item Many packages to install \pause
+  \item Many configurations to set-up \pause
 \end{itemize}
 
 \vspace{0.4cm}
@@ -489,69 +500,59 @@ WSGI - Web Server Gateway \\
 \end{tikzpicture}
 
 \begin{itemize}
-  \item An OS level virtualisation engine
+  \item An OS level virtualisation engine \pause
   \item Docker runs software \textit{containers}
-  \begin{itemize} \item a very light weight virtual machine \end{itemize}
+  \begin{itemize} \item a very light weight virtual machine \end{itemize} \pause
   \item Uses Linux kernel namespaces to isolate\\ available resources:
   \begin{itemize}
     \item operating environment
     \item process and user IDs 
     \item process trees 
     \item network
-	\item mounted file systems
+	\item mounted file systems \pause
   \end{itemize}
   \item Virtualisation provided by the OS itself
 \end{itemize}
 
+\centering
+\footnotesize{https://docker.com}
+
 \end{frame}
 
 % -----------------------------------------------
-\begin{frame}
+\begin{frame}[fragile]
 \frametitle<presentation>{Dockerfiles for PyWPS}
 
 \begin{itemize}
   \item A Docker image can be created automatically from a script
-   \begin{itemize} \item called \textit{dockerfile} \end{itemize}
+   \begin{itemize} \item called \textit{dockerfile} \end{itemize} \pause
   \item An image created by a PyWPS dockerfile: 
   \begin{itemize} 
     \item sets up the OS 
     \item wires up all necessary software (Nginx, Green Unicorn,\ldots)
-    \item is run by Docker as a container   
+    \item is run by Docker as a container   \pause
   \end{itemize}
 \end{itemize}
 
-\tiny{
+\tiny{}
+
 \begin{verbatim}
-
 FROM jorgedejesus/pywps4-demo
-
 MAINTAINER Jorge Samuel Mendes de Jesus <jorge.dejesus@geocat.net>
-
 \#For Gunicorn
-
 ARG GU\_WORKERS=5
-
 ENV GU\_WORKERS=\$\{GU\_WORKERS\}
-
 RUN apk add --update --no-cache nginx
-
 RUN rm /etc/nginx/conf.d/default.conf
-
 COPY pywps.conf /etc/nginx/conf.d/
-
 COPY run\_all.sh /run\_all.sh
-
 \#For nginx.pid    
-
 RUN mkdir -p /run/nginx
-
 \#For pywps
-
 RUN pip3 install gunicorn
-
 RUN ln -s /pywps-demo/wsgi/pywps.wsgi /pywps-demo/wsgi/pywps\_app.py
 \end{verbatim}
-}
+
 
 
 \end{frame}
@@ -579,33 +580,39 @@ RUN ln -s /pywps-demo/wsgi/pywps.wsgi /pywps-demo/wsgi/pywps\_app.py
 
 % -----------------------------------------------
 \begin{frame}
-\frametitle<presentation>{Running PyWPS with GUnicorn and Nginx}
+\frametitle<presentation>{Running PyWPS with Gunicorn and Nginx}
 
+\pause
 \texttt{\# docker pull jorgedejesus/pywps4-demo:nginx}
 
+\pause
 \texttt{\# docker run -it -p 80:80 pywps4-demo:ningx}
 
 \end{frame}
 
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Summary and Future Work}
+\section{Summary}
 
 \begin{frame}
 \frametitle<presentation>{Summary}
 
 \begin{itemize}
+  \pause
   \item SQAlchemy
   \begin{itemize} 
     \item Improved logging 
-    \item More powerfull process management becomes possible
+    \item Powerful process management becomes possible
     \item Support to many different database systems
+    \item \textit{Ad hoc} logging from user processes \ldots
   \end{itemize} 
+  \pause 
   \item Deployment   
   \begin{itemize} 
-    \item Nginx + GUnicorn provide the infrastructure for scalable services
+    \item Nginx + Gunicorn provide the infrastructure for scalable services
     \item Scalability implies increased complexity
   \end{itemize} 
+  \pause
   \item{Docker containers}
   \begin{itemize} 
     \item dockerfiles create pre-configured PyWPS images
