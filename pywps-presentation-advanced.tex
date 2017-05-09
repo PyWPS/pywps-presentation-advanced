@@ -528,7 +528,7 @@ WSGI - Web Server Gateway \\
   \item An image created by a PyWPS dockerfile: 
   \begin{itemize} 
     \item sets up the OS 
-    \item wires up all necessary software (Nginx, Green Unicorn,\ldots)
+    \item wires up all necessary software (Nginx, Gunicorn,\ldots)
     \item is run by Docker as a container   \pause
   \end{itemize}
 \end{itemize}
@@ -598,7 +598,7 @@ RUN ln -s /pywps-demo/wsgi/pywps.wsgi /pywps-demo/wsgi/pywps\_app.py
 
 \begin{itemize}
   \pause
-  \item SQAlchemy
+  \item SQLAlchemy
   \begin{itemize} 
     \item Improved logging 
     \item Powerful process management becomes possible
